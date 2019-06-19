@@ -1,6 +1,7 @@
 package dev.vespertine.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.core.view.GravityCompat
@@ -11,6 +12,10 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
+import androidx.fragment.app.Fragment
+import dev.vespertine.myapplication.fragments.CustomView
+import dev.vespertine.myapplication.fragments.PDMask
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,6 +40,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+
+
+
     }
 
     override fun onBackPressed() {
@@ -65,27 +73,36 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_home -> {
-                // Handle the camera action
+            R.id.nav_circle -> {
+                replaceFragment(CustomView.newInstance())
+                return true
             }
-            R.id.nav_gallery -> {
+            R.id.nav_pd_mask -> {
+                replaceFragment(PDMask.newInstance())
+                return true
+            }
+            R.id.nav_gradients -> {
 
             }
-            R.id.nav_slideshow -> {
+            R.id.nav_patterns_repeat -> {
 
             }
-            R.id.nav_tools -> {
+            R.id.nav_patterns_clamp -> {
 
             }
-            R.id.nav_share -> {
 
-            }
-            R.id.nav_send -> {
-
-            }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+
     }
 }

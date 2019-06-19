@@ -5,33 +5,30 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_home"
+                android:id="@+id/nav_circle"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="@string/menu_home"/>
         <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/nav_pd_mask"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="@string/menu_gallery"/>
-        <item
-                android:id="@+id/nav_slideshow"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/menu_slideshow"/>
-        <item
-                android:id="@+id/nav_tools"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/menu_tools"/>
+                android:title="PD - Mask"/>
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Shaders">
         <menu>
             <item
-                    android:id="@+id/nav_share"
+                    android:id="@+id/nav_gradients"
                     android:icon="@drawable/ic_menu_share"
-                    android:title="@string/menu_share"/>
+                    android:title="Gradients"/>
             <item
-                    android:id="@+id/nav_send"
+                    android:id="@+id/nav_patterns_repeat"
                     android:icon="@drawable/ic_menu_send"
-                    android:title="@string/menu_send"/>
+                    android:title="Patterns - Repeat"/>
+            <item
+                    android:id="@+id/nav_patterns_clamp"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Patterns - Clamp"/>
         </menu>
     </item>
 
